@@ -1,7 +1,17 @@
 module.exports = {
   siteMetadata: {
-    title: `Ibexa DXP 4.2 Webinar`,
+    title: `Ibexa DXP 4.1 Webinar`,
     siteUrl: `https://www.yourdomain.tld`,
   },
-  plugins: [],
+  plugins: [
+    {
+      resolve: "gatsby-source-graphql",
+      options: {
+        typeName: "Ibexa",
+        fieldName: "ibexa",
+        // Url to query from
+        url: "https://master-7rqtwti-jnog64p2zsfpg.eu-5.platformsh.site/graphql",
+      },
+    }
+  ],
 }
