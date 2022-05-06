@@ -1,6 +1,6 @@
 module.exports = {
   siteMetadata: {
-    title: `Ibexa DXP 4.1 Webinar`,
+    title: `Ibexa DXP 4.1`,
     siteUrl: `https://www.yourdomain.tld`,
   },
   plugins: [
