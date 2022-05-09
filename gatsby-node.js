@@ -10,13 +10,30 @@ query LoadProductsQuery {
   ibexa {
     products {
       byType {
-        skinCareProducts {
+        bloodGasSystems(first: 100) {
           edges {
             node {
               code
               name
               thumbnail {
+                alternativeText
                 uri
+              }
+              attributes {
+                sample_size { value }
+                sample_type { value }
+                time_to_result { value }
+                operating_system { value }
+                barcode_scanner { value }
+                power_rating { value }
+                power_frequency { value }
+                qc { value }
+              }
+              fields {
+                image {
+                  image_small: variation(identifier: small) { uri }
+                  image_large: variation(identifier: large) { uri }
+                }
               }
             }
           }
@@ -29,11 +46,11 @@ query LoadProductsQuery {
         if (result.errors) {
             throw result.errors
         }
-        result.data.ibexa.products.byType.skinCareProducts.edges.forEach(edge => {
+        result.data.ibexa.products.byType.bloodGasSystems.edges.forEach(edge => {
             const Product = edge.node
             createPage({
                 // Path for this page — required
-                path: '/products/' + `${edge.node.code}`,
+                path: '/catalog/' + `${edge.node.code}`,
                 component: productTemplate,
                 context: { Product },
             })
