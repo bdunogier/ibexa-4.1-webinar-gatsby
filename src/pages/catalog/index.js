@@ -6,7 +6,6 @@ import Box from "@material-ui/core/Box";
 import Card from "@material-ui/core/Card";
 
 function GridItem({ node }) {
-    console.log(node);
     return (
         // From 0 to 600px wide (smart-phones), I take up 12 columns, or the whole device width!
         // From 600-690px wide (tablets), I take up 6 out of 12 columns, so 2 columns fit the screen.
