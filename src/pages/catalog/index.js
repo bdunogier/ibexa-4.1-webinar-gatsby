@@ -1,19 +1,16 @@
 import * as React from 'react'
 import Layout from '../../components/layout'
-import {graphql} from "gatsby";
+import {graphql, Link} from "gatsby";
 
 const CatalogPage = ({ data }) => {
-    console.log(data)
     return (
         <Layout pageTitle="Catalog">
             <ul>{
-                data.ibexa.products.byType.skinCareProducts.edges.map(node => {
-                    console.log(node.node.code);
+                data.ibexa.products.byType.bloodGasSystems.edges.map(node => {
                     return (
                         <li key={node.node.code}>
-                            {node.node.name}
+                            <Link to={"/catalog/" + node.node.code}>{node.node.code}: {node.node.name}</Link>
                         </li>
-
                     )
                 })
             }</ul>
@@ -26,7 +23,7 @@ export const query = graphql`
         ibexa {
             products {
                 byType {
-                    skinCareProducts {
+                    bloodGasSystems {
                         edges {
                             node {
                                 code

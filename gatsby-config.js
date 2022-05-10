@@ -12,6 +12,7 @@ module.exports = {
         // Url to query from
         url: "https://master-7rqtwti-jnog64p2zsfpg.eu-5.platformsh.site/graphql",
       },
-    }
+    },
+    `gatsby-theme-material-ui`
   ],
 }

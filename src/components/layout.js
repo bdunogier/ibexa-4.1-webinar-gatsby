@@ -1,5 +1,7 @@
 import * as React from 'react'
 import { Link, useStaticQuery, graphql } from 'gatsby'
+import Container from '@mui/material/Container'
+
 import {
     container,
     heading,
@@ -21,7 +23,7 @@ const Layout = ({ pageTitle, children }) => {
     `)
 
     return (
-        <div className={container}>
+        <Container maxWidth={"lg"} >
             <title>{pageTitle} | {data.site.siteMetadata.title}</title>
             <header className={siteTitle}>{data.site.siteMetadata.title}</header>
             <nav>
@@ -35,7 +37,7 @@ const Layout = ({ pageTitle, children }) => {
                 <h1 className={heading}>{pageTitle}</h1>
                 {children}
             </main>
-        </div>
+        </Container>
     )
 }
 export default Layout

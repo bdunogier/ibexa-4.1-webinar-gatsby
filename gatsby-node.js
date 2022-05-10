@@ -16,23 +16,27 @@ query LoadProductsQuery {
               code
               name
               thumbnail {
-                alternativeText
                 uri
               }
+              fields {
+                image {
+                  image_small: variation(identifier: small) { uri }
+                  image_large: variation(identifier: large) { uri }
+                }
+                shortDescription { html5 }
+                description { html5 }
+              }
               attributes {
-                sample_size { value }
+\t\t\t\t\t\t\t\tsample_size { value }
                 sample_type { value }
                 time_to_result { value }
                 operating_system { value }
                 barcode_scanner { value }
                 power_rating { value }
                 power_frequency { value }
-                qc { value }
-              }
-              fields {
-                image {
-                  image_small: variation(identifier: small) { uri }
-                  image_large: variation(identifier: large) { uri }
+                qc {
+                  identifier
+                  value
                 }
               }
             }
@@ -42,7 +46,7 @@ query LoadProductsQuery {
     }
   }
 }
-  `, { limit: 1000 }).then(result => {
+`, { limit: 1000 }).then(result => {
         if (result.errors) {
             throw result.errors
         }
