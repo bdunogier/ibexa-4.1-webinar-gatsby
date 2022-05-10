@@ -1,6 +1,6 @@
 import * as React from 'react'
 import Layout from '../../components/layout'
-import {graphql, Link} from "gatsby";
+import {graphql, Link} from "gatsby"
 
 const CatalogPage = ({ data }) => {
     return (
