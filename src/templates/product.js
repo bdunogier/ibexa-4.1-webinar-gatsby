@@ -36,7 +36,7 @@ const ProductTemplate = ({ pageContext: { Product } }) => {
                 </Grid>
                 <Grid item xs={12}>
                     <h2>Characteristics</h2>
-                    <table className={characteristicsTable}>{attributes}</table>
+                    <table className={characteristicsTable}><tbody>{attributes}</tbody></table>
                 </Grid>
             </Grid>
         </Layout>

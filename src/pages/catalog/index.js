@@ -24,7 +24,7 @@ const CatalogPage = ({ data }) => {
             <Grid spacing={2} container>{
                 data.ibexa.products.byType.bloodGasSystems.edges.map(node => {
                     return (
-                        <GridItem xs={3} node={node}/>
+                        <GridItem key={node.node.code} xs={3} node={node}/>
                     )
                 })
             }</Grid>

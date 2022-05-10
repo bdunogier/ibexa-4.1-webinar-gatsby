@@ -3,11 +3,7 @@ import { Link, useStaticQuery, graphql } from 'gatsby'
 import Container from '@mui/material/Container'
 
 import {
-    container,
     heading,
-    navLinks,
-    navLinkItem,
-    navLinkText,
     siteTitle
 } from './layout.module.css'
 
@@ -28,7 +24,7 @@ const Layout = ({ pageTitle, children }) => {
                 <title>{pageTitle} | {data.site.siteMetadata.title}</title>
                 <header className={siteTitle}><img width="200" src="https://www.ibexa.co/assets/images/ibexa_logo.svg" /></header>
             </Container>
-            <nav class="navbar navbar-expand-lg navbar-light bg-light mb-5">
+            <nav className={"navbar navbar-expand-lg navbar-light bg-light mb-5"}>
                 <Container maxWidth={"lg"}>
                     <ul className="navbar-nav mr-auto">
                         <li className="nav-item"><Link to="/" className={"nav-link"}>Home</Link></li>
