@@ -3,7 +3,6 @@ import Layout from '../../components/layout'
 import {graphql, Link} from "gatsby"
 import {Grid} from "@mui/material";
 import Box from "@material-ui/core/Box";
-import Card from "@material-ui/core/Card";
 
 function GridItem({ node }) {
     return (
