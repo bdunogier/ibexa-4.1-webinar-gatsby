@@ -23,20 +23,26 @@ const Layout = ({ pageTitle, children }) => {
     `)
 
     return (
-        <Container maxWidth={"lg"} >
-            <title>{pageTitle} | {data.site.siteMetadata.title}</title>
-            <header className={siteTitle}>{data.site.siteMetadata.title}</header>
-            <nav>
-                <ul className={navLinks}>
-                    <li className={navLinkItem}><Link to="/" className={navLinkText}>Home</Link></li>
-                    <li className={navLinkItem}><Link to="/about" className={navLinkText}>About</Link></li>
-                    <li className={navLinkItem}><Link to="/catalog" className={navLinkText}>Catalog</Link></li>
-                </ul>
+        <Container maxWidth={false} disableGutters={true}>
+            <Container maxWidth={"lg"}>
+                <title>{pageTitle} | {data.site.siteMetadata.title}</title>
+                <header className={siteTitle}><img width="200" src="https://www.ibexa.co/assets/images/ibexa_logo.svg" /></header>
+            </Container>
+            <nav class="navbar navbar-expand-lg navbar-light bg-light mb-5">
+                <Container maxWidth={"lg"}>
+                    <ul className="navbar-nav mr-auto">
+                        <li className="nav-item"><Link to="/" className={"nav-link"}>Home</Link></li>
+                        <li className="nav-item"><Link to="/about" className={"nav-link"}>About</Link></li>
+                        <li className="nav-item"><Link to="/catalog" className={"nav-link"}>Catalog</Link></li>
+                    </ul>
+                </Container>
             </nav>
+            <Container maxWidth={"lg"}>
             <main>
                 <h1 className={heading}>{pageTitle}</h1>
                 {children}
             </main>
+            </Container>
         </Container>
     )
 }

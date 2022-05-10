@@ -13,6 +13,12 @@ module.exports = {
         url: "https://master-7rqtwti-jnog64p2zsfpg.eu-5.platformsh.site/graphql",
       },
     },
+    {
+      resolve: `gatsby-plugin-google-fonts`,
+      options: {
+        fonts: []
+      },
+    },
     `gatsby-theme-material-ui`
   ],
 }
