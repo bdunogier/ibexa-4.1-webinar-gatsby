@@ -23,6 +23,7 @@ module.exports = {
       resolve: 'gatsby-plugin-manifest',
       options: {
         icon: 'src/assets/images/favicon.png',
+        display: "standalone",
       },
     },
     `gatsby-theme-material-ui`
