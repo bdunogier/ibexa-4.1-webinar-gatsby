@@ -1,6 +1,7 @@
 import * as React from 'react'
 import { Link, useStaticQuery, graphql } from 'gatsby'
 import Container from '@mui/material/Container'
+import Logo from "../assets/images/helse-logo.png"
 
 import {
     heading,
@@ -22,7 +23,7 @@ const Layout = ({ pageTitle, children }) => {
         <Container maxWidth={false} disableGutters={true}>
             <Container maxWidth={"lg"}>
                 <title>{pageTitle} | {data.site.siteMetadata.title}</title>
-                <header className={siteTitle}><img width="200" src="https://www.ibexa.co/assets/images/ibexa_logo.svg" /></header>
+                <header className={siteTitle}><img width="120" src={Logo} /></header>
             </Container>
             <nav className={"navbar navbar-expand-lg navbar-light bg-light mb-5"}>
                 <Container maxWidth={"lg"}>

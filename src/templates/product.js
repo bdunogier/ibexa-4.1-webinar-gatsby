@@ -25,10 +25,10 @@ const ProductTemplate = ({ pageContext: { Product } }) => {
             {/*<ul>{attributes}</ul>*/}
 
             <Grid container spacing={2}>
-                <Grid item xs={4}>
+                <Grid item xs={12} md={4}>
                     <img src={Product.fields.image.image_large.uri} />
                 </Grid>
-                <Grid item xs={8}>
+                <Grid item xs={12} md={8}>
                     <div dangerouslySetInnerHTML={{ __html: Product.fields.shortDescription.html5 }}></div>
                 </Grid>
                 <Grid item xs={12}>
