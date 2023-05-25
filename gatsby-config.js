@@ -1,6 +1,6 @@
 module.exports = {
   siteMetadata: {
-    title: `Ibexa DXP 4.1`,
+    title: `Ibexa DXP Headless 4.5`,
     siteUrl: `https://www.yourdomain.tld`,
   },
   plugins: [
@@ -10,7 +10,7 @@ module.exports = {
         typeName: "Ibexa",
         fieldName: "ibexa",
         // Url to query from
-        url: "https://master-7rqtwti-jnog64p2zsfpg.eu-5.platformsh.site/graphql",
+        url: "https://master-7rqtwti-wekq7gfq7sukc.eu-5.platformsh.site/graphql",
       },
     },
     {
