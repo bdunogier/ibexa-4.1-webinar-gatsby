@@ -27,7 +27,7 @@ query LoadProductsQuery {
                 description { html5 }
               }
               attributes {
-\t\t\t\t\t\t\t\tsample_size { value }
+                sample_size { value }
                 sample_type { value }
                 time_to_result { value }
                 operating_system { value }
