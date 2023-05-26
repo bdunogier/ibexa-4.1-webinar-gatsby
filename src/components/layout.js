@@ -6,6 +6,7 @@ import {BottomNavigation, BottomNavigationAction} from "@mui/material"
 import InventoryIcon from '@mui/icons-material/Inventory'
 import NewspaperIcon from '@mui/icons-material/Newspaper'
 import { useState } from 'react'
+import Paper from '@mui/material/Paper';
 
 import {
     heading,
@@ -37,10 +38,12 @@ const Layout = ({ pageTitle, children }) => {
                 {children}
             </main>
             </Container>
-            <BottomNavigation showLabels value={value} onChange={(event, newValue) => {setValue(newValue)}}>
-                <BottomNavigationAction label="Products" icon={<InventoryIcon />} component={Link} to="/catalog" />
-                <BottomNavigationAction label="News" icon={<NewspaperIcon />} to="/catalog" />
-            </BottomNavigation>
+            <Paper sx={{ position: 'fixed', bottom: 0, left: 0, right: 0 }} elevation={3}>
+                <BottomNavigation showLabels value={value} onChange={(event, newValue) => {setValue(newValue)}}>
+                    <BottomNavigationAction label="Products" icon={<InventoryIcon />} component={Link} to="/catalog" />
+                    <BottomNavigationAction label="News" icon={<NewspaperIcon />} to="/catalog" />
+                </BottomNavigation>
+            </Paper>
         </Container>
     )
 }
