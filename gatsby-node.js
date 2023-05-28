@@ -4,9 +4,10 @@ exports.createPages = ({ graphql, actions }) => {
     const { createPage } = actions
 
     const productTemplate = path.resolve('src/templates/product.js')
+    const storyTemplate = path.resolve('src/templates/story.js')
 
     return graphql(`
-query LoadProductsQuery {
+query LoadPagesContentQuery {
   ibexa {
     products {
       byType {
@@ -44,6 +45,28 @@ query LoadProductsQuery {
         }
       }
     }
+    prototype {
+      blogPosts(query: {ParentLocationId: 319}) {
+        edges {
+          node {
+            _url
+            _contentInfo {
+              id
+            }
+            title
+            introduction { html5 }
+            keywords
+            description { html5 }
+            image {
+              image_small: variation(identifier: small) { uri }
+              image_large: variation(identifier: large) { uri }
+            }
+            author { name }
+            authorTitle
+          }
+        }
+      }
+    }
   }
 }
 `, { limit: 1000 }).then(result => {
@@ -59,6 +82,14 @@ query LoadProductsQuery {
                 context: { Product },
             })
         })
-
+        result.data.ibexa.prototype.blogPosts.edges.forEach(edge => {
+            const Story = edge.node
+            console.log("slug", '/stories/' + `${Story._url.replace('/en/stories/', '')}`)
+            createPage({
+                path: '/stories/' + `${Story._url.replace('/en/stories/', '')}`,
+                component: storyTemplate,
+                context: { Story },
+            })
+        })
     })
 }

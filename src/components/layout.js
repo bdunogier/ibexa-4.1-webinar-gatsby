@@ -27,7 +27,7 @@ const Layout = ({ pageTitle, children }) => {
     const [value, setValue] = useState(0)
 
     return (
-        <Container maxWidth={false} disableGutters={true}>
+        <Container maxWidth={false} disableGutters={true} maxHeight={"90%"}>
             <Container maxWidth={"lg"}>
                 <title>{pageTitle} | {data.site.siteMetadata.title}</title>
                 <header className={siteTitle}><img width="120" src={Logo} /></header>
@@ -41,7 +41,7 @@ const Layout = ({ pageTitle, children }) => {
             <Paper sx={{ position: 'fixed', bottom: 0, left: 0, right: 0 }} elevation={3}>
                 <BottomNavigation showLabels value={value} onChange={(event, newValue) => {setValue(newValue)}}>
                     <BottomNavigationAction label="Products" icon={<InventoryIcon />} component={Link} to="/catalog" />
-                    <BottomNavigationAction label="News" icon={<NewspaperIcon />} to="/catalog" />
+                    <BottomNavigationAction label="Stories" icon={<NewspaperIcon />} component={Link} to="/stories" />
                 </BottomNavigation>
             </Paper>
         </Container>
